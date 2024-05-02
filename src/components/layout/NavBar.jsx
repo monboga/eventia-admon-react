@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
-import { Link } from "react-scroll";
 import logo from "../../assets/logo.png";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,20 +10,19 @@ export const NavBar = () => {
   };
   const navItems = [
     {
-      link: "Home",
-      path: "home",
+      id: 0,
+      item: "Home",
+      path: "/",
     },
     {
-      link: "Novedades",
-      path: "feature",
+      id: 1,
+      item: "Auditorios",
+      path: "/auditorios",
     },
     {
-      link: "Nosotros",
-      path: "about",
-    },
-    {
-      link: "Precios",
-      path: "pricing",
+      id: 2,
+      item: "Reservacion",
+      path: "/reservacion",
     },
   ];
   // adicion de efectos de scroll
@@ -46,18 +45,14 @@ export const NavBar = () => {
             </a>
             {/* mostrar los navitem using map */}
             <ul className="md:flex space-x-12 hidden">
-              {navItems.map(({ link, path }) => (
-                <Link
-                  activeClass="active"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  key={link}
+              {navItems.map(({ id, item, path }) => (
+                <NavLink
+                  key={id}
                   to={path}
                   className="block hover:text-gray-300 cursor-pointer"
                 >
-                  {link}
-                </Link>
+                  {item}
+                </NavLink>
               ))}
             </ul>
           </div>
@@ -86,19 +81,18 @@ export const NavBar = () => {
           isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"
         }`}
       >
-        {navItems.map(({ link, path }) => (
-          <Link
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={-80}
-            key={link}
+        {navItems.map(({ id, item, path }) => (
+          <NavLink
+            // spy={true}
+            // smooth={true}
+            // offset={-80}
+            key={id}
             to={path}
             className="block text-white hover:text-gray-300"
             onClick={toggleMenu}
           >
-            {link}
-          </Link>
+            {item}
+          </NavLink>
         ))}
       </div>
     </>
