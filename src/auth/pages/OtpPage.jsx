@@ -103,7 +103,7 @@ export const OtpPage = () => {
           ) : (
             <div className="w-80 flex flex-col gap-4 rounded-lg p-4">
               <h1 className="text-center leading-normal text-white font-medium text-3xl mb-6">
-                Bienvenido a <br /> eventia{" "}
+                ¿Deseas <br />consultar tu agenda?{" "}
               </h1>
 
               {showOTP ? (

@@ -3,7 +3,7 @@ import { Nosotros } from "./components/Nosotros";
 import { Noticias } from "./components/Noticias";
 import { Novedades } from "./components/Novedades";
 
-export const EventiaApp = () => {
+export const EventiaHome = () => {
   return (
     <>
       <Home />
@@ -15,4 +15,4 @@ export const EventiaApp = () => {
   );
 };
 
-export default EventiaApp;
+export default EventiaHome;

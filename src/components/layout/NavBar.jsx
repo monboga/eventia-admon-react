@@ -26,7 +26,7 @@ export const NavBar = () => {
     },
     {
       id: 3,
-      item: "Realizar reserva",
+      item: "Mi Agenda",
       path: "/auth/otp"
     }
   ];
