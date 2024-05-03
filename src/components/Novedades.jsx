@@ -7,7 +7,7 @@ export const Novedades = () => {
   return (
     <>
       <div
-        className="my-24 md:px-14 px-4 max-w-screen-2xl mx-auto"
+        className="my-28 md:px-14 px-4 max-w-screen-2xl mx-auto"
         id="feature"
       >
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10">

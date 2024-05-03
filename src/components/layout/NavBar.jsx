@@ -62,9 +62,9 @@ export const NavBar = () => {
             </ul>
           </div>
           <div className="space-x-12 hidden md:flex items-center">
-            <button className="text-white bg-secondary py-2 px-4 transition-all duration-300 rounded hover:text-white hover:bg-emerald-800">
+            <NavLink className="text-white bg-secondary py-2 px-4 transition-all duration-300 rounded hover:text-white hover:bg-emerald-800" to="/auth/login">
               Iniciar Sesion
-            </button>
+            </NavLink>
           </div>
           <div className="md:hidden">
             <button
