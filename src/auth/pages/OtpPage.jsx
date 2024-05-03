@@ -1,4 +1,4 @@
-export const OtpForm = () => {
+export const OtpPage = () => {
   return (
     <>
       <div>OTP Page</div>
