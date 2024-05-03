@@ -24,6 +24,11 @@ export const NavBar = () => {
       item: "Reservacion",
       path: "/reservacion",
     },
+    {
+      id: 3,
+      item: "Realizar reserva",
+      path: "/auth/otp"
+    }
   ];
   // adicion de efectos de scroll
 
