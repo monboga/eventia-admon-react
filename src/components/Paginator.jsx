@@ -11,12 +11,15 @@ export const Paginator = ({ url, paginator }) => {
       {/* lo mostramos dependiendo de si tiene o no elementos */}
       {/* validar si el paginator.length = 0 no hacemos nada, si es mayor moostramos el paginador */}
       {paginator?.totalPages == 1 || (
-        <ul className="pagination">
+        <nav
+          className="isolate inline-flex -space-x-px rounded-md shadow-sm"
+          aria-label="Pagination"
+        >
           {/* significa que estamos en la primera pagina */}
           {paginator.number == 0 || (
-            <li className="page-item">
-              {/* le restmos 1 porque es hacia atras, al ser 1, sera 0 */}
-              <Link className="page-link" to={`${url}/${paginator.number - 1}`}>
+            <li className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+              {/* le restamos 1 porque es hacia atras, al ser 1, sera 0 */}
+              <Link className="" to={`${url}/${paginator.number - 1}`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -39,8 +42,14 @@ export const Paginator = ({ url, paginator }) => {
           )}
 
           {/* que pasa si estamos en la primera pagina, la podemos deshabilitar */}
-          <li className={paginator.first ? "page-item disabled" : "page-item"}>
-            <Link className="page-link" to={`${url}/0`}>
+          <li
+            className={
+              paginator.first
+                ? "relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-300 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 disabled"
+                : "relative z-10 inline-flex items-center bg-gray-300 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300"
+            }
+          >
+            <Link className="" to={`${url}/0`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -57,11 +66,14 @@ export const Paginator = ({ url, paginator }) => {
             </Link>
           </li>
 
-          <li className={paginator.last ? "page-item disabled" : "page-item"}>
-            <Link
-              className="page-link"
-              to={`${url}/${paginator.totalPages - 1}`}
-            >
+          <li
+            className={
+              paginator.last
+                ? "relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 disabled"
+                : "relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+            }
+          >
+            <Link className="" to={`${url}/${paginator.totalPages - 1}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -80,9 +92,12 @@ export const Paginator = ({ url, paginator }) => {
 
           {/* podemos avanzar a la siguiente, siempre y cuando exista la pagina */}
           {paginator.number >= paginator.totalPages - 1 || (
-            <li className="page-item">
+            <li className="list-none">
               {/* le restmos 1 porque es hacia atras, al ser 1, sera 0 */}
-              <Link className="page-link" to={`${url}/${paginator.number + 1}`}>
+              <Link
+                className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                to={`${url}/${paginator.number + 1}`}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -103,7 +118,7 @@ export const Paginator = ({ url, paginator }) => {
               </Link>
             </li>
           )}
-        </ul>
+        </nav>
       )}
     </>
   );
