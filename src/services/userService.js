@@ -26,6 +26,21 @@ export const findAll = async() => {
 
 }
 
+// funcion del paginador
+export const findAllPages = async(page = 0) => {
+    try {
+        // servidor de spring para el backend donde lista todos los usuarios.
+        const response = await usersApi.get(`${BASE_URL}/page/${page}`);
+        return response;
+        
+    } catch (error) {
+
+        console.error(error);
+        
+    }
+
+}
+
 export const save = async ({username, email, password, admin}) => {
     // eslint-disable-next-line no-useless-catch
     try {
