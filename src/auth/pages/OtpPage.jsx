@@ -5,7 +5,6 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { BsFillShieldLockFill, BsTelephoneFill } from "react-icons/bs";
 import { CgSpinner } from "react-icons/cg";
-import { FaCalendarAlt, FaCalendarCheck, FaCamera } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { auth } from "../config/firebase.config";
