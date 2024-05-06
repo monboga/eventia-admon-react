@@ -9,7 +9,7 @@ import { FaCalendarAlt, FaCalendarCheck, FaCamera } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { auth } from "../config/firebase.config";
-import { Link } from "react-router-dom";
+import { Menu } from "../components/Menu";
 
 export const OtpPage = () => {
   const [otp, setOtp] = useState("");
@@ -81,28 +81,7 @@ export const OtpPage = () => {
             // <h2 className="text-center text-white font-medium text-2xl">
             //   Has iniciado sesion exitosamente
             // </h2>
-            // <MenuOpciones />
-            <>
-              <div className="w-80 flex flex-col gap-4 rounded-lg p-4">
-                <h1 className="text-center loading-normal text-white font-medium text-3xl mb-6">
-                  Bienvenido!
-                </h1>
-
-                <div className="w-100 flex flex-row gap-4 p-4">
-                  <div className="bg-white text-emerald-500 mx-auto p-4 rounded-full">
-                    <FaCalendarCheck size={30} />
-                  </div>
-                  <div className="bg-white text-emerald-500 mx-auto p-4 rounded-full">
-                    <Link to="/auth/agenda">
-                      <FaCalendarAlt size={30} />
-                    </Link>
-                  </div>
-                  <div className="bg-white text-emerald-500 mx-auto p-4 rounded-full">
-                    <FaCamera size={30} />
-                  </div>
-                </div>
-              </div>
-            </>
+            <Menu />
           ) : (
             <div className="w-80 flex flex-col gap-4 rounded-lg p-4">
               <h1 className="text-center leading-normal text-white font-medium text-3xl mb-6">
