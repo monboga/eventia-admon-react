@@ -72,9 +72,9 @@ export const UserForm = ({ handlerCloseForm, userSelected }) => {
   };
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="">
         <input
-          className="form-control my-3 w-75"
+          className=""
           placeholder="Username"
           name="username"
           value={username}

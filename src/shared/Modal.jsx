@@ -1,17 +1,19 @@
 import { BsXLg } from "react-icons/bs";
+import { useUsers } from "../hooks/useUsers";
 
-export const Modal = ({ isVisible, onClose, children }) => {
-  if (!isVisible) return null;
-  const handleClose = (e) => {
-    if (e.target.id === "wrapper") onClose();
-  };
+export const Modal = ({ userSelected, handlerCloseForm, children }) => {
+  //   if (!isVisible) return null;
+  //   const handleClose = (e) => {
+  //     if (e.target.id === "wrapper") onClose();
+  //   };
+
+  const [userSelected, handlerCloseForm] = useUsers;
 
   return (
     <>
       <div
         className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center"
-        id="wrapper"
-        onClick={handleClose}
+        onClick={handlerCloseForm}
       >
         <div className="w-[600px] flex flex-col">
           <button
