@@ -22,3 +22,11 @@ nav {
 .btnPrimary {
     @apply py-3 px-8 bg-secondary font-semibold text-white rounded hover:bg-emerald-900 transition-all duration-300;
 }
+
+.btnSave {
+    @apply py-3 px-8 bg-blue-700 font-semibold text-white rounded hover:bg-blue-900 transition-all duration-300;
+}
+
+.btnClose {
+    @apply py-3 px-8 bg-red-700 font-semibold text-white rounded hover:bg-red-900 transition-all duration-300;
+}

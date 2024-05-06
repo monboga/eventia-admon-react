@@ -9,6 +9,7 @@ import { FaCalendarAlt, FaCalendarCheck, FaCamera } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { auth } from "../config/firebase.config";
+import { Link } from "react-router-dom";
 
 export const OtpPage = () => {
   const [otp, setOtp] = useState("");
@@ -92,7 +93,9 @@ export const OtpPage = () => {
                     <FaCalendarCheck size={30} />
                   </div>
                   <div className="bg-white text-emerald-500 mx-auto p-4 rounded-full">
-                    <FaCalendarAlt size={30} />
+                    <Link to="/auth/agenda">
+                      <FaCalendarAlt size={30} />
+                    </Link>
                   </div>
                   <div className="bg-white text-emerald-500 mx-auto p-4 rounded-full">
                     <FaCamera size={30} />
@@ -103,7 +106,8 @@ export const OtpPage = () => {
           ) : (
             <div className="w-80 flex flex-col gap-4 rounded-lg p-4">
               <h1 className="text-center leading-normal text-white font-medium text-3xl mb-6">
-                ¿Deseas <br />consultar tu agenda?{" "}
+                ¿Deseas <br />
+                consultar tu agenda?{" "}
               </h1>
 
               {showOTP ? (
@@ -166,6 +170,6 @@ export const OtpPage = () => {
       </section>
     </>
   );
-}
+};
 
 export default OtpPage;

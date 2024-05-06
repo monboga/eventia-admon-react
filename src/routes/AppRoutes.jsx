@@ -8,6 +8,7 @@ import { UsersPage } from "../pages/UsersPage";
 import { RegisterPage } from "../pages/RegisterPage";
 import { useSelector } from "react-redux";
 import { Contacto } from "../pages/Contacto";
+import { Agenda } from "../auth/components/Agenda";
 
 export const AppRoutes = () => {
   const { isAdmin } = useSelector((state) => state.auth);
@@ -21,6 +22,7 @@ export const AppRoutes = () => {
 
         {/* rutas de inicio de sesion por login form o por otp desde mensaje sms */}
         <Route path="/auth/otp" element={<OtpPage />} />
+        <Route path="/auth/agenda" element={<Agenda />} />
         <Route path="/auth/login" element={<LoginPage />} />
 
         {/* Rutas protegidas dependiendo de si es admin o es user */}
