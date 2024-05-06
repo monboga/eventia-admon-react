@@ -28,6 +28,11 @@ export const NavBar = () => {
       id: 3,
       item: "Mi Agenda",
       path: "/auth/otp"
+    },
+    {
+      id: 4,
+      item: "Contactanos",
+      path: "/contacto"
     }
   ];
   // adicion de efectos de scroll
